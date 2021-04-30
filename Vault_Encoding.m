@@ -25,7 +25,7 @@ n_degree = 8; % El orden de polynomio P(x) %%%%%% Polinomio %%%%%%
 pol=[1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1]; %% Polinomio que usa CRC
 display = 1;
 
-im = imread(strcat(ruta_completo,'\DB1_B\105_1.tif'));
+im = imread(strcat(ruta_completo,'\DB1_B\101_6.tif'));
 %im = imread('F:\Biometricas_Watermarking\DB1_B\106_7.tif');
 %im = imread('F:\Biometricas_Watermarking\DB1_B\110_1.tif');
 %im = imread('H:\Biometricas_Watermarking\DB1_B\105_7.tif');
@@ -88,6 +88,8 @@ for k=1:n_degree+1
     Coef(k)=sum(V(k,:).*(2.^q));
 end
 
+save('coef_pol.txt','Coef', '-ascii');
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%% %%%%%%%%%%%%% Evaluar polinomio  en GF(2^16)%%%%%%%%%%%%%%%%%%%%%%
    
@@ -121,7 +123,7 @@ Vault = All_Data(Pind,:);                %%% Aplicar permutación
 figure;
 plot(Vault(:,1),Vault(:,2),'v');
 
-save('Vault105-1.txt','Vault', '-ascii'); %%%% Fuzzy Vault V=(A,B), A: valores de X de polynomio
+save('Vault101-1.txt','Vault', '-ascii'); %%%% Fuzzy Vault V=(A,B), A: valores de X de polynomio
                                 %%%%                      B: resultado de
                                 %%%%                      polinomio B=f(A)
                                 %%%%   
