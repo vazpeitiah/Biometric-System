@@ -25,12 +25,7 @@ n_degree = 8; % El orden de polynomio P(x) %%%%%% Polinomio %%%%%%
 pol=[1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1]; %% Polinomio que usa CRC
 display = 1;
 
-im = imread(strcat(ruta_completo,'\DB1_B\101_6.tif'));
-%im = imread('F:\Biometricas_Watermarking\DB1_B\106_7.tif');
-%im = imread('F:\Biometricas_Watermarking\DB1_B\110_1.tif');
-%im = imread('H:\Biometricas_Watermarking\DB1_B\105_7.tif');
-%im = imread('H:\Biometricas_Watermarking\DB1_B\103_7.tif');
-%im = imread('H:\Biometricas_Watermarking\DB1_B\109_6.tif');
+im = imread(strcat(ruta_completo,'\platillas_huellas\101_7.tif'));
 
 [S1,S2]=size(im); %%%% El tamaño de la imagen
 
@@ -123,11 +118,12 @@ Vault = All_Data(Pind,:);                %%% Aplicar permutación
 figure;
 plot(Vault(:,1),Vault(:,2),'v');
 
-save('Vault101-1.txt','Vault', '-ascii'); %%%% Fuzzy Vault V=(A,B), A: valores de X de polynomio
+save('resultados/Vault.txt','Vault', '-ascii'); %%%% Fuzzy Vault V=(A,B), A: valores de X de polynomio
                                 %%%%                      B: resultado de
                                 %%%%                      polinomio B=f(A)
                                 %%%%   
-save('Key_Usuario.txt','Key', '-ascii');
-
+save('resultados/KeyUsuario.txt','Key', '-ascii');
 
     
+
+
